@@ -19,7 +19,10 @@ const router = createBrowserRouter(
       <Route path="/:category" element={<ProductsByCategoryPage />}/>
       <Route path="/product/:id" element={<ProductDetailPage />}/>
     </Route>
-  )
+  ),
+  {
+    basename: "/Elecxo",
+  }
 );
 
 function App() {
