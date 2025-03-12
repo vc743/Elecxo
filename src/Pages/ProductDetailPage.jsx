@@ -28,7 +28,11 @@ export const ProductDetailPage = () => {
       <section className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 mb-6">
           <div>
-            <img className="shadow rounded-lg" src={product.image} alt={product.title} />
+            <img
+              className="shadow rounded-lg"
+              src={product.image}
+              alt={product.title}
+            />
           </div>
           <div>
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">

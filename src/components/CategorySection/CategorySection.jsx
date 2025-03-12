@@ -26,7 +26,7 @@ export const CategorySection = ({
         {isHomePage ? (
           <Link
             to={`/${category}`}
-            className="px-4 py-2 rounded border hover:bg-gray-100 border-gray-200 "
+            className="px-4 py-2 rounded border hover:bg-gray-100 border-gray-200"
           >
             See All
           </Link>
