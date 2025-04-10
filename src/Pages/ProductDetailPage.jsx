@@ -1,4 +1,5 @@
 import { CategorySection } from "../components/CategorySection/CategorySection";
+import { Button } from "../components/Button/Button";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
@@ -52,15 +53,16 @@ export const ProductDetailPage = () => {
               {product.color}
             </p>
             <div className="flex gap-4 mb-4">
-              <button
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-black text-white text-sm rounded-md transition-colors duration-200 hover:bg-black/85"
+              <Button
+                iconLeft={<TbShoppingCartPlus size={20} />}
+                fullWidth
                 onClick={() => addToCart(product)}
               >
-                <TbShoppingCartPlus size={20} /> Add to cart
-              </button>
-              <button className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-gray-100 text-sm rounded-md transition-colors duration-200 hover:bg-gray-200">
+                Add to cart
+              </Button>
+              <Button variant="secondary" fullWidth>
                 Buy Now
-              </button>
+              </Button>
             </div>
             <div className="bg-gray-100 rounded-md p-4 text-sm space-y-4 mb-4">
               <div className="flex items-start gap-3">
@@ -93,9 +95,7 @@ export const ProductDetailPage = () => {
             </div>
             <div className="flex items-center gap-1">
               <p className="text-gray-500 text-sm">Share:</p>
-              <button className="p-3 hover:bg-gray-100 rounded-full focus:ring-4 focus:ring-gray-300 focus:outline-none transition-colors duration-200">
-                <TbShare size={15} />
-              </button>
+              <Button variant="ghost" iconLeft={<TbShare size={15} />}></Button>
             </div>
           </div>
         </div>

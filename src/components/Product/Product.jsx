@@ -1,3 +1,4 @@
+import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { TbShoppingCartPlus } from "react-icons/tb";
@@ -24,12 +25,7 @@ export const Product = ({ product, onAddToCart }) => {
         <h3 className="font-medium truncate mb-1">{product.title}</h3>
         <div className="flex justify-between items-center">
           <p className="font-bold ">${product.price}</p>
-          <button
-            className="p-3 hover:bg-gray-100 rounded-full"
-            onClick={onAddToCart}
-          >
-            <TbShoppingCartPlus size={20} />
-          </button>
+          <Button variant="ghost" iconLeft={<TbShoppingCartPlus size={20} />} onClick={onAddToCart}></Button>
         </div>
       </div>
     </motion.div>

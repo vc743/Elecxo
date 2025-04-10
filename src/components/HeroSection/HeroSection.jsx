@@ -1,3 +1,4 @@
+import { Button } from "../Button/Button";
 import { Carousel } from "../Carousel/Carousel";
 import { TbChevronRight } from "react-icons/tb";
 
@@ -22,15 +23,25 @@ export const HeroSection = () => {
           <p className="text-gray-500">
             Find everything you need at the best prices and guaranteed quality.
           </p>
-          <button className="flex items-center justify-center gap-2 text-sm font-medium text-white bg-black/90 hover:bg-black/80 px-8 py-3 rounded-md transition-colors duration-200">
-            <span>See Offers</span>
-            <TbChevronRight size={15}/>
-          </button>
+          <Button
+            iconRight={<TbChevronRight size={15} />}
+            variant="primary"
+            size="md"
+            className="font-medium"
+          >
+            See Offers
+          </Button>
         </div>
         <div className="basis-1/2">
           <Carousel autoSlide>
             {slides.map((slide) => (
-              <img key={slide} src={slide} className="rounded-md" alt="Sales banner" loading="lazy" />
+              <img
+                key={slide}
+                src={slide}
+                className="rounded-md"
+                alt="Sales banner"
+                loading="lazy"
+              />
             ))}
           </Carousel>
         </div>

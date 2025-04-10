@@ -1,7 +1,12 @@
+import { Button } from "../Button/Button";
 import { useEffect, useState } from "react";
 import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
 
-export const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000 }) => {
+export const Carousel = ({
+  children,
+  autoSlide = false,
+  autoSlideInterval = 3000,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const prev = () => {
@@ -17,10 +22,10 @@ export const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000
   };
 
   useEffect(() => {
-    if(!autoSlide) return;
+    if (!autoSlide) return;
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  }, [])
+  }, []);
 
   return (
     <div className="relative overflow-hidden">
@@ -31,18 +36,18 @@ export const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000
         {children}
       </div>
       <div className="absolute inset-0 flex items-center justify-between p-2">
-        <button
-          className="p-1 rounded-full bg-white/80 text-gray-800 hover:bg-white shadow"
+        <Button
+          iconLeft={<TbChevronLeft size={30} />}
+          variant="secondary"
+          className="bg-white/80 p-1 shadow"
           onClick={prev}
-        >
-          <TbChevronLeft size={30} />
-        </button>
-        <button
-          className="p-1 rounded-full bg-white/80 text-gray-800 hover:bg-white shadow"
+        ></Button>
+        <Button
+          iconRight={<TbChevronRight size={30} />}
+          variant="ghost"
+          className="bg-white/80 p-1 shadow"
           onClick={next}
-        >
-          <TbChevronRight size={30} />
-        </button>
+        ></Button>
       </div>
     </div>
   );
