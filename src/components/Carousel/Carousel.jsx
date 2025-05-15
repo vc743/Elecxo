@@ -5,7 +5,7 @@ import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
 export const Carousel = ({
   children,
   autoSlide = false,
-  autoSlideInterval = 3000,
+  autoSlideInterval = 8000,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 

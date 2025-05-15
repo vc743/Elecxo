@@ -1,13 +1,10 @@
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
 import { TbShoppingCartPlus } from "react-icons/tb";
 
 export const Product = ({ product, onAddToCart }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+    <article
       className="bg-white border hover:shadow-lg rounded-lg transition-all duration-200"
     >
       <div className="w-full overflow-hidden">
@@ -28,6 +25,6 @@ export const Product = ({ product, onAddToCart }) => {
           <Button variant="ghost" iconLeft={<TbShoppingCartPlus size={20} />} onClick={onAddToCart}></Button>
         </div>
       </div>
-    </motion.div>
+    </article>
   );
 };
